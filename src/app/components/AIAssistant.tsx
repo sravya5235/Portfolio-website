@@ -236,6 +236,25 @@ export function AIAssistant() {
   const [currentStatus, setCurrentStatus] = useState("Online");
   const [narratedIds, setNarratedIds] = useState<Set<string>>(new Set());
   const [suggestion, setSuggestion] = useState('');
+  const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>([]);
+
+  const creativeQuestions = [
+    "Show me the Drone Radar",
+    "What's your wild side?",
+    "Tell me about your logic",
+    "What else can you do?"
+  ];
+
+  const recruiterQuestions = [
+    "Summarize Technical ROI",
+    "Can I see her Resume?",
+    "Availability & Contact",
+    "Professional Proficiencies"
+  ];
+
+  useEffect(() => {
+    setSuggestedQuestions(persona === 'creative' ? creativeQuestions : recruiterQuestions);
+  }, [persona]);
 
   const keywords = ['yolo drone', 'vitalsgraph', 'skills', 'contact', 'hire', 'resume', 'cv', 'projects', 'about'];
 
@@ -245,7 +264,7 @@ export function AIAssistant() {
       setSuggestion('');
       return;
     }
-    const match = keywords.find(k => k.startsWith(val.toLowerCase()) && k !== val.toLowerCase());
+    const match = keywords.find((k: string) => k.startsWith(val.toLowerCase()) && k !== val.toLowerCase());
     setSuggestion(match ? val + match.slice(val.length) : '');
   };
 
@@ -335,13 +354,6 @@ export function AIAssistant() {
   };
   const scrollRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-
-  const suggestedQuestions = [
-    "Tell me about your projects",
-    "How can I contact her?",
-    "What's her strongest skill?",
-    "Why should I hire her?"
-  ];
 
   // Auto-scroll to bottom of chat
   useEffect(() => {
