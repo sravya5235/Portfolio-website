@@ -1,6 +1,6 @@
 import { ArrowUpRight, MoveUpRight, ArrowRightCircle, Github, Linkedin } from 'lucide-react';
 import { Link } from 'react-router';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ContactSection } from "../components/ContactSection";
 import { projectsData } from "../../data/projects";
@@ -9,6 +9,21 @@ export default function ProjectsPage() {
   useEffect(() => {
     document.title = "Projects | Sravya Chowdary";
   }, []);
+
+  const projectComments: Record<string, string> = {
+    'yolo-drone': "The YOLO Drone—one of Sravya's most autonomous creations! Want to see the live detection radar? [SHOW_WIDGET:DRONE]",
+    'vitalsgraph': "VitalsGraph is a medical-tech powerhouse. It's built for high-stakes ICU resource management.",
+    'inventory-dashboard': "This Inventory Dashboard handles data with extreme efficiency. Sravya built it for real-time clarity.",
+    'prompt-optimization': "LLM Prompt Optimization—this is where the real AI logic shines. It's automated and hyper-accurate."
+  };
+
+  const handleIntersect = (id: string) => {
+    if (projectComments[id]) {
+      window.dispatchEvent(new CustomEvent('sravya_narrate', { 
+        detail: { id, message: projectComments[id] } 
+      }));
+    }
+  };
 
   return (
     <div className="bg-white min-h-screen w-full">
@@ -62,11 +77,13 @@ export default function ProjectsPage() {
             {projectsData.map(project => (
               <ProjectCard
                 key={project.id}
+                id={project.id}
                 image={project.image}
                 title={project.title}
                 description={project.description}
                 techStack={project.techStack}
                 href={project.href}
+                onInView={() => handleIntersect(project.id)}
               />
             ))}
           </motion.div>
@@ -108,17 +125,32 @@ export default function ProjectsPage() {
 }
 
 interface ProjectCardProps {
+  id: string;
   image: string;
   title: string;
   description?: string;
   techStack?: string[];
   href: string;
   imageClassName?: string;
+  onInView?: () => void;
 }
 
-function ProjectCard({ image, title, description, techStack, href, imageClassName = "object-cover" }: ProjectCardProps) {
+function ProjectCard({ id, image, title, description, techStack, href, imageClassName = "object-cover", onInView }: ProjectCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && onInView) {
+        onInView();
+      }
+    }, { threshold: 0.6 });
+
+    if (cardRef.current) observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, [onInView]);
+
   return (
-    <div className="flex flex-col gap-4 md:gap-6 group/card">
+    <div ref={cardRef} className="flex flex-col gap-4 md:gap-6 group/card">
       <a href={href} target="_blank" rel="noopener noreferrer" className="block aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden bg-gray-100 shadow-sm border border-gray-100">
         <img
           src={image}

@@ -1,8 +1,7 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+  "api": {
+    "bodyParser": {
+      "sizeLimit": "1mb"
     }
-  ]
+  }
 }

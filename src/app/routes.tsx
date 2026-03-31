@@ -5,6 +5,7 @@ import { Navigation } from "./components/Navigation";
 import ScrollToTop from "./components/ScrollToTop";
 import CustomCursor from "./components/CustomCursor";
 import { Toaster } from "./components/ui/sonner";
+import { AIAssistant } from "./components/AIAssistant";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
@@ -43,6 +44,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       </AnimatePresence>
       <Navigation />
       <Toaster />
+      <AIAssistant />
     </>
   );
 }
