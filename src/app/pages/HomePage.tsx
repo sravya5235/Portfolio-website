@@ -43,12 +43,12 @@ export default function HomePage() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-32 right-8 md:right-16 z-10">
+        <div className="absolute bottom-16 md:bottom-32 right-6 sm:right-8 md:right-16 z-10">
           <button 
             onClick={() => document.getElementById('about-section')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full p-4 md:p-6 transition-all duration-300 group cursor-pointer border border-white/10"
+            className="bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full p-3 sm:p-4 md:p-6 transition-all duration-300 group cursor-pointer border border-white/10"
           >
-            <ArrowUpRight className="text-white/40 group-hover:text-white group-hover:rotate-45 w-12 h-12 md:w-16 md:h-16 transition-all duration-300" />
+            <ArrowUpRight className="text-white/40 group-hover:text-white group-hover:rotate-45 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 transition-all duration-300" />
             <span className="sr-only">Scroll to About</span>
           </button>
         </div>
