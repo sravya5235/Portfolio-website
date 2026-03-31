@@ -432,7 +432,7 @@ export function AIAssistant() {
       {/* Floating Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-[9999] w-14 h-14 md:w-16 md:h-16 bg-black border border-white/20 rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:border-white/40 transition-all group"
+        className="fixed bottom-24 md:bottom-6 right-4 md:right-6 z-[9999] w-14 h-14 md:w-16 md:h-16 bg-black border border-white/20 rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:border-white/40 transition-all group"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
@@ -471,7 +471,7 @@ export function AIAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1, x: 0 }}
             exit={{ opacity: 0, y: 100, scale: 0.8, x: 50 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-24 right-6 z-[9999] w-[calc(100vw-48px)] sm:w-[400px] h-[400px] md:h-[500px] bg-black/80 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col font-['Inter']"
+            className="fixed bottom-44 md:bottom-24 right-4 md:right-6 z-[9999] w-[calc(100vw-32px)] sm:w-[400px] h-[450px] md:h-[500px] bg-black/80 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col font-['Inter']"
           >
             {/* Header */}
             <div className="p-6 border-b border-white/10 flex items-center justify-between bg-white/5">
