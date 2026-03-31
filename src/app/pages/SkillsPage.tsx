@@ -26,10 +26,10 @@ export default function SkillsPage() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto text-center relative z-10"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-[80px] font-semibold leading-tight mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[70px] font-semibold leading-tight mb-6 tracking-tight">
             Expertise & <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-600">Technologies</span>
           </h1>
-          <p className="text-[#A1A1AA] text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
+          <p className="text-[#A1A1AA] text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
             A curated selection of technical proficiencies, frameworks, and core competencies driving my development process.
           </p>
 

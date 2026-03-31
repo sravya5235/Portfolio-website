@@ -26,10 +26,10 @@ export default function AboutPage() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto"
         >
-          <h1 className="font-['Inter'] font-medium text-[#1A1A1E] text-5xl md:text-7xl lg:text-[90px] leading-tight mb-8">
+          <h1 className="font-['Inter'] font-medium text-[#1A1A1E] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-8">
             Behind the code
           </h1>
-          <p className="font-['DM_Sans'] text-gray-500 text-xl md:text-2xl lg:text-3xl max-w-4xl leading-relaxed font-light mb-12">
+          <p className="font-['DM_Sans'] text-gray-500 text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-4xl leading-relaxed font-light mb-12">
             I'm a passionate Computer Science student and creative developer who loves bridging the gap between technical complexity and intuitive design. 
             When I'm not coding, I'm usually exploring new research in AI or deep-diving into the latest design trends.
           </p>

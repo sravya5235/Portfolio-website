@@ -36,7 +36,7 @@ export default function HomePage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative z-10 text-center px-4 mb-20"
         >
-          <h1 className="font-['Inter'] font-medium text-white text-5xl md:text-7xl lg:text-[90px] leading-tight">
+          <h1 className="font-['Inter'] font-medium text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
             Creative Developer
             <br />& Designer
           </h1>
@@ -59,18 +59,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16">
             <div>
-              <p className="font-['DM_Sans'] font-medium text-black text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+              <p className="font-['DM_Sans'] font-medium text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed">
                 Driven by curiosity and a love for design, I create simple, functional, and visually striking digital experiences. As a student, I'm always learning and exploring new ideas.
               </p>
             </div>
 
             <div className="flex flex-col justify-between">
-              <p className="font-['DM_Sans'] font-light text-[#616161] text-lg md:text-xl lg:text-2xl leading-relaxed mb-8">
+              <p className="font-['DM_Sans'] font-light text-[#616161] text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-8">
                 The fusion of my passion for design, development, and seamless user experiences places me at the intersection of creativity and technology in the digital world.
               </p>
 
               <Link to="/skills" className="inline-flex items-center gap-3 group w-fit">
-                <span className="font-['DM_Sans'] text-[#1A1A1E] text-xl md:text-2xl lg:text-3xl">More about me</span>
+                <span className="font-['DM_Sans'] text-[#1A1A1E] text-lg sm:text-xl md:text-2xl lg:text-3xl">More about me</span>
                 <div className="bg-[#0D0D12] rounded-full p-2 group-hover:scale-110 transition-transform shadow-sm">
                   <ArrowUpRight className="text-white w-5 h-5 md:w-6 md:h-6" />
                 </div>
@@ -84,11 +84,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-12 md:mb-16">
-            <h2 className="font-['Inter'] font-medium text-[#1A1A1E] text-4xl md:text-6xl lg:text-7xl leading-tight">
+            <h2 className="font-['Inter'] font-medium text-[#1A1A1E] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
               Impressive Works
             </h2>
 
-            <p className="font-['DM_Sans'] font-light text-gray-500 text-base md:text-lg lg:text-xl max-w-md">
+            <p className="font-['DM_Sans'] font-light text-gray-500 text-sm sm:text-base md:text-lg lg:text-xl max-w-md">
               HERE'S A SELECTION OF PROJECTS THAT SHOWCASE MY PASSION FOR DESIGN AND DEVELOPMENT, REFLECTING CREATIVITY AND INNOVATION.
             </p>
           </div>

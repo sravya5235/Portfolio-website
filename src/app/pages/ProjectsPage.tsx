@@ -28,7 +28,7 @@ export default function ProjectsPage() {
           transition={{ duration: 0.8 }}
           className="max-w-7xl mx-auto"
         >
-          <h1 className="font-['Inter'] font-medium text-black text-5xl md:text-6xl lg:text-[80px] leading-tight max-w-5xl">
+          <h1 className="font-['Inter'] font-medium text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[70px] leading-tight max-w-5xl">
             welcome to my realm of wild projects and awesome creations
           </h1>
 
